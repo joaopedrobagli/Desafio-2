@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Prático</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Desafio Prático</h1>
+    
+    <nav>
+        <button onclick="mostrarPagina('home')">Início</button>
+        <button onclick="mostrarPagina('duplicados')">Remover Duplicados</button>
+        <button onclick="mostrarPagina('usuarios')">Lista de Usuários</button>
+        <button onclick="mostrarPagina('formulario')">Formulário de Cadastro</button>
+    </nav>
+
+    <div id="home" class="pagina ativa">
+        <h2>Página Inicial</h2>
+    </div>
+
+    <div id="duplicados" class="pagina">
+        <h2>Remover Itens Duplicados</h2>
+        <input type="text" id="entrada-array" placeholder="Informe os itens com vírgula" value="João, João, João pedro">
+        <button onclick="removerDuplicados()">Remover Itens Duplicados</button>
+        <div id="resultado"></div>
+    </div>
+
+    <div id="usuarios" class="pagina">
+        <h2>Lista de Usuários</h2>
+        <div id="lista-usuarios" class="lista-usuarios"></div>
+    </div>
+
+    <div id="formulario" class="pagina">
+        <h2>Formulário</h2>
+        <form onsubmit="validarFormulario(event)">
+            <div>
+                <input type="text" id="nome" placeholder="Nome">
+                <div class="erro" id="erro-nome">Nome não foi preenchido</div>
+            </div>
+            <div>
+                <input type="email" id="email" placeholder="Email">
+                <div class="erro" id="erro-email">Email inválido</div>
+            </div>
+            <div>
+                <input type="password" id="senha" placeholder="Senha">
+                <div class="erro" id="erro-senha">Senha deve ter pelo menos 6 caracteres</div>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
