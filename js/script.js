@@ -36,23 +36,23 @@ function MostrarUsuarios() {
     `).join('');
 }
 
-function validarFormulario(event) {
+function checkFormulario(event) {
     event.preventDefault();
-    let valido = true;
+    let correto = true;
 
     const nome = document.getElementById('nome').value;
     if (nome.length < 3) {
         document.getElementById('erro-nome').style.display = 'block';
-        valido = false;
+        correto = false;
     } else {
         document.getElementById('erro-nome').style.display = 'none';
     }
 
     const email = document.getElementById('email').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    const emailForma = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailForma.test(email)) {
         document.getElementById('erro-email').style.display = 'block';
-        valido = false;
+        correto = false;
     } else {
         document.getElementById('erro-email').style.display = 'none';
     }
@@ -60,15 +60,15 @@ function validarFormulario(event) {
     const senha = document.getElementById('senha').value;
     if (senha.length < 6) {
         document.getElementById('erro-senha').style.display = 'block';
-        valido = false;
+        correto = false;
     } else {
         document.getElementById('erro-senha').style.display = 'none';
     }
 
-    if (valido) {
+    if (correto) {
         alert('Formulário foi enviado com sucesso!');
         event.target.reset();
     }
 }
 
-renderizarUsuarios();
+voltarUsuarios();
